@@ -26,5 +26,19 @@ public class CarTests
 		Assert.AreEqual(230.0, price);
 	}
 
+	// Tester at VehicleType returnerer "Car"
+	[TestMethod]
+	public void VehicleType_ReturnCarValue()
+	{
+
+		// Arrange: Opretter en bil
+		var car = new Car();
+
+		// Act: Kalder VehicleType()
+		string type = car.VehicleType();
+
+		// Assert: Tjekker at typen er "Car"
+		Assert.AreEqual("Car", type);
+	}
 
 }
