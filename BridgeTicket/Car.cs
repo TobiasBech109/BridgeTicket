@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BridgeTicket;
 
-public class Car
+public class Car : Vehicle
 {
 
 	/// <summary>
@@ -21,7 +21,7 @@ public class Car
 	/// Bruger vi for at sikre at prisen vil være fast
 	/// </summary>
 	/// <returns></returns>
-	public double Price()
+	public override double Price()
 	{
 		return 230;
 	}
@@ -30,7 +30,7 @@ public class Car
 	/// Bruger vi senere til at override med noget polymorfi
 	/// </summary>
 	/// <returns></returns>
-	public string VehicleType()
+	public override string VehicleType()
 	{
 		return "Car";
 	}

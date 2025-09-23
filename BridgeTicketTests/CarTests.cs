@@ -14,7 +14,7 @@ public class CarTests
 
 	// Tester at Price returnerer den korrekte faste pris
 	[TestMethod]
-	public void Price_ReturnsFixedValue()
+	public void Price_ReturnsFixedCarValue()
 	{
 		// Arrange: Opretter en bil
 		var car = new Car();
@@ -39,6 +39,35 @@ public class CarTests
 
 		// Assert: Tjekker at typen er "Car"
 		Assert.AreEqual("Car", type);
+	}
+
+	// Tester at Price returnerer den korrekte faste pris
+	[TestMethod]
+	public void Price_ReturnsFixedMCValue()
+	{
+		// Arrange: Opretter en MC
+		var mc = new MC();
+
+		// Act: Kalder Price()
+		double price = mc.Price();
+
+		// Assert: Tjekker at prisen er 125
+		Assert.AreEqual(125.0, price);
+	}
+
+	// Tester at VehicleType returnerer "MC"
+	[TestMethod]
+	public void VehicleType_ReturnMCValue()
+	{
+
+		// Arrange: Opretter en MC
+		var mc = new MC();
+
+		// Act: Kalder VehicleType()
+		string type = mc.VehicleType();
+
+		// Assert: Tjekker at typen er "MC"
+		Assert.AreEqual("MC", type);
 	}
 
 }
