@@ -16,11 +16,21 @@ public class MC : Vehicle
 	/// Det bruger vi for at anse tidspunktet af motorcyklen kører over broen
 	/// </summary>
 	public DateTime Date { get; set; }
+
+	/// <summary>
+	/// Denne her constructor bruger vi til at initialisere vores properties
+	/// </summary>
+	public MC(string licenseplate, DateTime date) 
+		: base(licenseplate, date)
+	{
+	}
+
+
 	/// <summary>
 	/// Bruger vi for at sikre at prisen vil være fast
 	/// </summary>
 	/// <returns></returns>
-	
+
 	public override double Price()
 	{
 		return 125;

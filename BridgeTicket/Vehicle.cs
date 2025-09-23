@@ -9,7 +9,7 @@ public abstract class Vehicle
 {
 
 	/// <summary>
-	/// Denne her property bruger til identifikation af bilen
+	/// Denne her property bruger til identifikation af køretøjet.
 	/// </summary>
 	public string Licenseplate { get; set; }
 
@@ -18,6 +18,26 @@ public abstract class Vehicle
 	/// </summary>
 	public DateTime Date { get; set; }
 
+
+	/// <summary>
+	/// Denne her constructor bruger vi til at initialisere vores properties
+	/// </summary>
+	protected Vehicle(string licenseplate, DateTime date)
+	{
+		Licenseplate = licenseplate;
+		Date = date;
+
+		SetLicensePlate();
+	}
+
+	public void SetLicensePlate()
+	{
+		if (Licenseplate.Length > 7)
+		{
+			throw new ArgumentException("License plate cannot be longer than 7 characters.");
+		}
+	}
+
 	/// <summary>
 	/// Bruger vi for at sikre at prisen vil være fast
 	/// </summary>
@@ -25,7 +45,7 @@ public abstract class Vehicle
 	public abstract double Price();
 
 	/// <summary>
-	/// Bruger vi senere til at override med noget polymorfi
+	/// Den er abstrakt, fordi vi skal override den i de klasser der nedarver fra Vehicle
 	/// </summary>
 	/// <returns></returns>
 	public abstract string VehicleType();

@@ -9,13 +9,22 @@ public class Car : Vehicle
 {
 
 	/// <summary>
-	/// Denne her property bruger til identifikation af bilen
+	/// Denne her property bruger til identifikation af bilen.
 	/// </summary>
 	public string Licenseplate { get; set; }
 	/// <summary>
 	/// Det bruger vi for at anse tidspunktet af bilen kører over broen
 	/// </summary>
 	public DateTime Date { get; set; }
+
+
+	/// <summary>
+	/// Denne her constructor bruger vi til at initialisere vores properties
+	/// </summary>
+	public Car(string licenseplate, DateTime date) 
+		: base(licenseplate, date)
+	{
+	}
 
 	/// <summary>
 	/// Bruger vi for at sikre at prisen vil være fast
