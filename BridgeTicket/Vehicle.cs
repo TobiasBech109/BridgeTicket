@@ -18,6 +18,8 @@ public abstract class Vehicle
 	/// </summary>
 	public DateTime Date { get; set; }
 
+	public bool Brobizz { get; set; }
+
 
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties

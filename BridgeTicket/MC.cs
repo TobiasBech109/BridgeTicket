@@ -33,7 +33,15 @@ public class MC : Vehicle
 
 	public override double Price()
 	{
-		return 125;
+		if (Brobizz == true)
+		{
+			return Price() * 0.10;
+		}
+
+		else
+		{
+			return 125.0;
+		}
 	}
 	
 	/// <summary>

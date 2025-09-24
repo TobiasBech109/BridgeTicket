@@ -32,7 +32,16 @@ public class Car : Vehicle
 	/// <returns></returns>
 	public override double Price()
 	{
-		return 230;
+
+		if (Brobizz == true)
+		{
+			return Price() * 0.10;
+		}
+
+		else
+		{
+			return 230.0;
+		}
 	}
 
 	/// <summary>
@@ -43,8 +52,6 @@ public class Car : Vehicle
 	{
 		return "Car";
 	}
-
-	
 
 
 }

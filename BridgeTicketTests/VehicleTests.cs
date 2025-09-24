@@ -83,7 +83,7 @@ public class VehicleTests
 	[DataRow("123456789")]
 	[DataRow("LONGPLATE1")]
 	[TestMethod]
-	public void LicensePlate_TooLong_ThrowsArgumentException2()
+	public void LicensePlate_TooLong_ThrowsArgumentException2(string licensePlate)
 	{
 		// Arrange 
 		Exception exception = null;
@@ -91,7 +91,7 @@ public class VehicleTests
 		// Act
 		try
 		{
-			var car = new Car(Licenseplate, DateTime.Now);
+			var car = new Car(licensePlate, DateTime.Now);
 		}
 		catch (Exception ex)
 		{
