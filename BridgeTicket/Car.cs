@@ -21,8 +21,8 @@ public class Car : Vehicle
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties
 	/// </summary>
-	public Car(string licenseplate, DateTime date) 
-		: base(licenseplate, date)
+	public Car(string licenseplate, DateTime date, bool brobizz = false) 
+		: base(licenseplate, date, brobizz)
 	{
 	}
 
@@ -33,15 +33,8 @@ public class Car : Vehicle
 	public override double Price()
 	{
 
-		if (Brobizz == true)
-		{
-			return Price() * 0.10;
-		}
-
-		else
-		{
-			return 230.0;
-		}
+		double price = 230.0;
+		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
 	}
 
 	/// <summary>

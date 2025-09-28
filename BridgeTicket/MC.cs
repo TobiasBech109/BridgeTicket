@@ -20,8 +20,8 @@ public class MC : Vehicle
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties
 	/// </summary>
-	public MC(string licenseplate, DateTime date) 
-		: base(licenseplate, date)
+	public MC(string licenseplate, DateTime date, bool brobizz = false) 
+		: base(licenseplate, date, brobizz)
 	{
 	}
 
@@ -33,16 +33,16 @@ public class MC : Vehicle
 
 	public override double Price()
 	{
-		if (Brobizz == true)
-		{
-			return Price() * 0.10;
-		}
-
-		else
-		{
-			return 125.0;
-		}
+		double price = 120.0;
+		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
+		
+		
+		//else if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
+		//{
+		//	return price *= 0.80; // 20% rabat i weekenden
+		//}
 	}
+	
 	
 	/// <summary>
 	/// Bruger vi senere til at override med noget polymorfi

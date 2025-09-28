@@ -24,10 +24,11 @@ public abstract class Vehicle
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties
 	/// </summary>
-	protected Vehicle(string licenseplate, DateTime date)
+	protected Vehicle(string licenseplate, DateTime date, bool brobizz = false)
 	{
 		Licenseplate = licenseplate;
 		Date = date;
+		Brobizz = brobizz;
 
 		SetLicensePlate();
 	}
