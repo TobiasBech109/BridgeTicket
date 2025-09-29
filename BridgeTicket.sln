@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36511.14 d17.14
+VisualStudioVersion = 17.14.36511.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeTicket", "BridgeTicket\BridgeTicket.csproj", "{F3F6B9DF-6E2E-48AA-A60D-04A560AA9055}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeTicketTests", "BridgeTicketTests\BridgeTicketTests.csproj", "{1C78E90B-60EA-4780-9335-C953E247C38D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreBæltsBroen", "StoreBæltsBroen\StoreBæltsBroen.csproj", "{53CADF11-553B-4E68-94E9-5BCE0DE99DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1C78E90B-60EA-4780-9335-C953E247C38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C78E90B-60EA-4780-9335-C953E247C38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C78E90B-60EA-4780-9335-C953E247C38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53CADF11-553B-4E68-94E9-5BCE0DE99DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CADF11-553B-4E68-94E9-5BCE0DE99DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CADF11-553B-4E68-94E9-5BCE0DE99DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CADF11-553B-4E68-94E9-5BCE0DE99DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace BridgeTicket;
+﻿using BridgeTicket;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+namespace StoreBæltsBroen;
 
-public class Car : Vehicle
+public abstract class StoreBæltsBroen : Vehicle
 {
 
 	/// <summary>
@@ -22,32 +18,34 @@ public class Car : Vehicle
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties
 	/// </summary>
-	public Car(string licenseplate, DateTime date, bool brobizz = false) 
+	public StoreBæltsBroen(string licenseplate, DateTime date, bool brobizz = false)
 		: base(licenseplate, date, brobizz)
 	{
 	}
 
 	/// <summary>
-	/// Bruger vi for at sikre at prisen vil være fast, med mindre brobizz er brugt eller det er weekend
+	/// Bruger vi for at sikre at prisen vil være fast, med mindre Brobizz er brugt eller det er weekend
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Den beregnede pris</returns>
 	public override double Price()
 	{
 		double price = 230.0;
-		// Tjek om datoen er lørdag eller søndag
-		if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
+
+		// Weekend-rabat: 15%
+		if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday && VehicleType() == "Car")
 		{
-			price *= 0.8; // 20% rabat i weekenden
-		}
-		else
-		{
-			return price;
-			
+			price *= 0.85;
 		}
 
-		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
+		// Brobizz-rabat: 5%
+		if (Brobizz)
+		{
+			price *= 0.95;
+		}
 
+		return price;
 	}
+
 
 	/// <summary>
 	/// Bruger vi senere til at override med noget polymorfi
@@ -57,6 +55,5 @@ public class Car : Vehicle
 	{
 		return "Car";
 	}
-
 
 }

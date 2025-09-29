@@ -36,11 +36,6 @@ public class MC : Vehicle
 		double price = 120.0;
 		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
 		
-		
-		//else if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
-		//{
-		//	return price *= 0.80; // 20% rabat i weekenden
-		//}
 	}
 	
 	
