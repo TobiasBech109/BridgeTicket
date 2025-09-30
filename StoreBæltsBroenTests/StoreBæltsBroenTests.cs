@@ -1,10 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StoreBæltsBroencar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StoreBæltsBroen;
+using StoreBæltsBroencar;
 namespace StoreBæltsBroencar.Tests;
 
 [TestClass()]
@@ -37,6 +38,17 @@ public class StoreBæltsBroenTests
 		double expectedPrice = 230.0 * 0.95;
 		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Brobizz discount should apply on weekdays.");
 	}
+
+	[TestMethod]
+	public void AddTicket_ShouldStoreTicket()
+	{
+		var car = new StoreBæltsBroenCar("ABC123", DateTime.Now);
+		StorebæltRepository.AddTicket(car);
+
+		var allTickets = StorebæltRepository.GetAllTickets();
+		Assert.IsTrue(allTickets.Contains(car));
+	}
+
 
 }
 
