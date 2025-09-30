@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BridgeTicket</name>
+    </assembly>
+    <members>
+        <member name="P:BridgeTicket.Car.Licenseplate">
+            <summary>
+            Denne her property bruger til identifikation af bilen.
+            </summary>
+        </member>
+        <member name="P:BridgeTicket.Car.Date">
+            <summary>
+            Det bruger vi for at anse tidspunktet af bilen kører over broen
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.Car.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Denne her constructor bruger vi til at initialisere vores properties
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.Car.Price">
+            <summary>
+            Bruger vi for at sikre at prisen vil være fast, med mindre brobizz er brugt eller det er weekend
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BridgeTicket.Car.VehicleType">
+            <summary>
+            Bruger vi senere til at override med noget polymorfi
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BridgeTicket.MC.Licenseplate">
+            <summary>
+            Denne her property bruger til identifikation af motorcyklen
+            </summary>
+        </member>
+        <member name="P:BridgeTicket.MC.Date">
+            <summary>
+            Det bruger vi for at anse tidspunktet af motorcyklen kører over broen
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.MC.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Denne her constructor bruger vi til at initialisere vores properties
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.MC.Price">
+            <summary>
+            Bruger vi for at sikre at prisen vil være fast
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BridgeTicket.MC.VehicleType">
+            <summary>
+            Bruger vi senere til at override med noget polymorfi
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BridgeTicket.Vehicle.Licenseplate">
+            <summary>
+            Denne her property bruger til identifikation af køretøjet.
+            </summary>
+        </member>
+        <member name="P:BridgeTicket.Vehicle.Date">
+            <summary>
+            Det bruger vi for at anse tidspunktet af bilen kører over broen
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.Vehicle.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Denne her constructor bruger vi til at initialisere vores properties
+            </summary>
+        </member>
+        <member name="M:BridgeTicket.Vehicle.Price">
+            <summary>
+            Bruger vi for at sikre at prisen vil være fast
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BridgeTicket.Vehicle.VehicleType">
+            <summary>
+            Den er abstrakt, fordi vi skal override den i de klasser der nedarver fra Vehicle
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,24 +1,20 @@
-﻿using BridgeTicket;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BridgeTicket;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-namespace StoreBæltsBroen;
+namespace StoreBæltsBroenMC;
 
-public abstract class StoreBæltsBroen : Vehicle
+
+
+public class StoreBæltsBroenMC : Vehicle
 {
-
-	/// <summary>
-	/// Denne her property bruger til identifikation af bilen.
-	/// </summary>
-	public string Licenseplate { get; set; }
-	/// <summary>
-	/// Det bruger vi for at anse tidspunktet af bilen kører over broen
-	/// </summary>
-	public DateTime Date { get; set; }
-
-
 	/// <summary>
 	/// Denne her constructor bruger vi til at initialisere vores properties
 	/// </summary>
-	public StoreBæltsBroen(string licenseplate, DateTime date, bool brobizz = false)
+	public StoreBæltsBroenMC(string licenseplate, DateTime date, bool brobizz = false)
 		: base(licenseplate, date, brobizz)
 	{
 	}
@@ -30,12 +26,6 @@ public abstract class StoreBæltsBroen : Vehicle
 	public override double Price()
 	{
 		double price = 230.0;
-
-		// Weekend-rabat: 15%
-		if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday && VehicleType() == "Car")
-		{
-			price *= 0.85;
-		}
 
 		// Brobizz-rabat: 5%
 		if (Brobizz)
@@ -53,7 +43,6 @@ public abstract class StoreBæltsBroen : Vehicle
 	/// <returns></returns>
 	public override string VehicleType()
 	{
-		return "Car";
+		return "Storebælt MC";
 	}
-
 }

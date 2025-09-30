@@ -10,4 +10,10 @@
     <ProjectReference Include="..\BridgeTicket\BridgeTicket.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="BridgeTicket">
+      <HintPath>..\BridgeTicket\bin\Debug\net8.0\BridgeTicket.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

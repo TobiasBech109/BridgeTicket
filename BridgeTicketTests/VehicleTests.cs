@@ -104,7 +104,7 @@ public class VehicleTests
 
 	[TestMethod]
 	public void CarPrice_WithBrobizz_ShouldApplyDiscount()
-		{
+	{
 		// Arrange opretter en bil med Brobizz
 		// Bruger en hverdag for at teste Brobizz-rabat
 		var car = new Car("AB12345", new DateTime(2025, 9, 30), brobizz: true); // Tirsdag
@@ -116,7 +116,7 @@ public class VehicleTests
 
 		// Assert tjekker at prisen er rabatteret
 		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be discounted by 5% when Brobizz is used.");
-		}
+	}
 
 
 	[TestMethod]
@@ -149,6 +149,5 @@ public class VehicleTests
 		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be full when Brobizz is not used.");
 	}
 
-
-
+	
 }
