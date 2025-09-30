@@ -106,14 +106,16 @@ public class VehicleTests
 	public void CarPrice_WithBrobizz_ShouldApplyDiscount()
 		{
 		// Arrange opretter en bil med Brobizz
-		var car = new Car("AB12345", DateTime.Now, brobizz: true);
-		double expectedPrice = 230 * 0.9;
+		// Bruger en hverdag for at teste Brobizz-rabat
+		var car = new Car("AB12345", new DateTime(2025, 9, 30), brobizz: true); // Tirsdag
+		double expectedPrice = 230 * 0.95;
+
 
 		// Act henter prisen fra objektet
 		double actualPrice = car.Price();
 
 		// Assert tjekker at prisen er rabatteret
-		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be discounted by 10% when Brobizz is used.");
+		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be discounted by 5% when Brobizz is used.");
 		}
 
 
@@ -122,13 +124,13 @@ public class VehicleTests
 	{
 		// Arrange: Opretter en MC med Brobizz aktiveret
 		var mc = new MC("MC12345", DateTime.Now, brobizz: true);
-		double expectedPrice = 120 * 0.9;
+		double expectedPrice = 120 * 0.95;
 
 		// Act: Henter prisen fra objektet
 		double actualPrice = mc.Price();
 
 		// Assert: Tjekker at prisen er rabatteret
-		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be discounted by 10% when Brobizz is used.");
+		Assert.AreEqual(expectedPrice, actualPrice, 0.01, "Price should be discounted by 5% when Brobizz is used.");
 	}
 
 

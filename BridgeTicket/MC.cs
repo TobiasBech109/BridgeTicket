@@ -34,7 +34,7 @@ public class MC : Vehicle
 	public override double Price()
 	{
 		double price = 120.0;
-		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
+		return Brobizz ? price * 0.95 : price; // 5% rabat med Brobizz
 		
 	}
 	

@@ -34,19 +34,20 @@ public class Car : Vehicle
 	public override double Price()
 	{
 		double price = 230.0;
-		// Tjek om datoen er lørdag eller søndag
+
+		// Weekendrabat
 		if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
 		{
 			price *= 0.8; // 20% rabat i weekenden
 		}
-		else
+
+		// Brobizz-rabat gælder kun hvis det ikke er weekend
+		if (!(Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday) && Brobizz)
 		{
-			return price;
-			
+			price *= 0.95;
 		}
 
-		return Brobizz ? price * 0.9 : price; // 5% rabat med Brobizz
-
+		return price;
 	}
 
 	/// <summary>
